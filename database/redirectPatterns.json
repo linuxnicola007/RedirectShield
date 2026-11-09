@@ -1,0 +1,6 @@
+{
+  "patterns": [
+    "double-redirect",
+    "meta-refresh-chain"
+  ]
+}

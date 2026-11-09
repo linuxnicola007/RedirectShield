@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>RedirectShield Warning</title>
+  <link rel="stylesheet" href="warning.css">
+</head>
+<body>
+  <div class="warning-container">
+    <div class="shield">🛡️</div>
+    <h1>⚠️ Dangerous Website Blocked</h1>
+    <p>RedirectShield prevented navigation to a potentially harmful site.</p>
+    <div class="details">
+      <p><strong>URL:</strong> <span id="blockedUrl"></span></p>
+      <p><strong>Threat Score:</strong> <span id="score"></span></p>
+      <p><strong>Verdict:</strong> <span id="verdict"></span></p>
+      <p><strong>Reasons:</strong></p>
+      <ul id="reasonsList"></ul>
+    </div>
+    <div class="actions">
+      <button id="goBack">← Go Back</button>
+      <button id="proceedAnyway" class="danger">Proceed Anyway (Not Recommended)</button>
+    </div>
+  </div>
+  <script src="warning.js"></script>
+</body>
+</html>

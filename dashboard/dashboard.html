@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>RedirectShield Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h1>RedirectShield - Security Dashboard</h1>
+    <div class="summary-cards">
+      <div class="card">🚫 Total Blocked: <span id="totalBlocked">0</span></div>
+      <div class="card">⚠️ Suspicious: <span id="totalSuspicious">0</span></div>
+      <div class="card">🔗 Redirects Analyzed: <span id="totalRedirects">0</span></div>
+    </div>
+    <div class="history-table">
+      <h3>Threat History</h3>
+      <table id="historyTable">
+        <thead><tr><th>Time</th><th>URL</th><th>Score</th><th>Verdict</th><th>Reasons</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="dashboard.js" type="module"></script>
+</body>
+</html>

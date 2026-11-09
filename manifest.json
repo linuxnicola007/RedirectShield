@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "RedirectShield",
+  "version": "1.0.0",
+  "description": "Protects against malicious redirects, phishing URLs, and typosquatting attacks.",
+  "permissions": [
+    "webRequest",
+    "webNavigation",
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/loader.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "warning/warning.html",
+        "warning/warning.css",
+        "warning/warning.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "resources": [
+        "content/*.js",
+        "utils/logger.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "RedirectShield",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "options_page": "dashboard/dashboard.html",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
